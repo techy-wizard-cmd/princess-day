@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Princess Day 🌸</title>
+  <style>
+    :root{
+      --bg:#FFF8FF;
+      --card:#ffffff;
+      --accent:#ff66b2;
+      --text:#2b2b2b;
+      --muted:#6b6b6b;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --radius:18px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:linear-gradient(180deg,var(--bg),#FFF0F8 60%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{width:100%;max-width:880px}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    header{display:flex;gap:18px;align-items:center}
+    .avatar{
+      width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#ffd6e8);display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 6px 18px rgba(255,102,178,0.18)
+    }
+
+    h1{margin:0;font-size:28px;line-height:1.05}
+    p.lead{margin:8px 0 18px;color:var(--muted)}
+
+    .emoji-row{display:flex;gap:12px;font-size:28px;margin:10px 0}
+
+    .letter-cta{
+      margin-top:18px;
+      display:block;
+      text-decoration:none;
+      width:100%;
+      background:linear-gradient(90deg,var(--accent),#ffb3d1);
+      color:white;
+      padding:18px;border-radius:14px;text-align:center;font-weight:600;box-shadow:0 8px 20px rgba(255,102,178,0.18);border:none;cursor:pointer
+    }
+
+    /* little letter-looking link */
+    .letter-link{
+      display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,#fff,#ffeef8);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease
+    }
+    .letter-link:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+    .envelope{width:56px;height:44px;border-radius:10px;background:linear-gradient(180deg,#fff,#ffeef8);display:flex;align-items:center;justify-content:center;font-size:22px}
+
+    /* letter page */
+    .letter-page{display:none;margin-top:18px}
+    .letter-body{background:linear-gradient(180deg,#fff,#fffafb);padding:22px;border-radius:12px;border:1px solid rgba(0,0,0,0.03);line-height:1.65}
+
+    .small{font-size:14px;color:var(--muted)}
+
+    .controls{display:flex;gap:10px;justify-content:flex-end;margin-top:14px}
+    .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(255,102,178,0.18)}
+    .btn.primary{background:var(--accent);color:white}
+
+    /* responsive tweaks */
+    @media (max-width:600px){
+      body{padding:18px}
+      h1{font-size:22px}
+      .avatar{width:66px;height:66px;font-size:28px}
+      .envelope{width:48px;height:38px;font-size:20px}
+    }
+
+    /* show letter page when #letter in hash */
+    :target{outline:none}
+
+    /* for accessibility focus */
+    a:focus, button:focus{outline:3px solid rgba(255,102,178,0.18)}
+    .desktop-only{display:block}
+    .mobile-only{display:none}
+    @media(max-width:600px){
+      .desktop-only{display:none}
+      .mobile-only{display:block}
+    }
+</style>
+</head>
+<body>
+  <main class="container">
+    <section class="card" id="home">
+      <header>
+        <div class="avatar"><img src="./media/images/avatar-image.jpg" alt="Princess Avatar" style="width:100%;height:100%;border-radius:50%"></div>
+        <div style="flex:1">
+          <h1>Happy Princess Day, my Princess! 🌸</h1>
+          <p class="lead small">A small surprise made with love — click the little letter below to open your letter ❤️</p>
+          <div class="emoji-row" aria-hidden="true">👑 🌷 💖 🧚‍♀️ ✨</div>
+        </div>
+      </header>
+
+      <div style="margin-top:18px">
+        <!-- clickable letter that navigates to the #letter section -->
+        <a href="letter.html" class="letter-link desktop-only" aria-label="Open your letter">
+          <div class="envelope">✉️</div>
+          <div>
+            <div style="font-weight:700">A little letter for you</div>
+            <div class="small">Click to open — there are some words straight from my heart 💌</div>
+          </div>
+        </a>
+
+        <!-- alternate big CTA button (visible on mobile easily) -->
+        <a href="letter.html" class="letter-cta mobile-only" style="margin-top:14px;display:block">Open my letter ✨</a>
+
+        
+      </div>
+
+    </section>
+
+    
+  </main>
+
+  
+</body>
+</html>
